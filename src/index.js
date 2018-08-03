@@ -15,8 +15,15 @@ class Base extends React.Component {
     ]
   };
 
+  handleChange = qnacategory => {
+    this.setState({
+      status: qnacategory
+    });
+  };
+
   render() {
     const { status, qnacategory } = this.state;
+    const { handleChange } = this;
 
     return (
       <div className="indexbackground">
@@ -24,7 +31,13 @@ class Base extends React.Component {
           <p>더 궁금하신 사항은 contact@trevari.co.kr로 문의주세요 :)</p>
           <p>-회신가능요일: 수~일</p>
           {qnacategory.map(step => {
-            return <Qnabutton qnacategory={step} status={this.state.status}/>;
+            return (
+              <Qnabutton
+                onClick={step => handleChange(step)}
+                qnacategory={step}
+                status={status}
+              />
+            );
           })}
         </div>
         <style JSX>

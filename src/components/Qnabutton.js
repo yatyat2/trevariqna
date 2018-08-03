@@ -1,11 +1,14 @@
 import React from "react";
 
 class Qnabutton extends React.Component {
-  // const {qnacategory} = this.props.qnacategory  왜 안되는 걸까여
-
   render() {
+    const { qnacategory, status, onClick } = this.props;
+
     return (
-      <button className={this.props.status == this.props.qnacategory ? "buttonactive":"button"}>
+      <button
+        onClick={() => onClick(qnacategory)}
+        className={status == qnacategory ? "buttonactive" : "button"}
+      >
         {this.props.qnacategory}
         <style JSX>
           {`
@@ -16,11 +19,13 @@ class Qnabutton extends React.Component {
             border-radius:2px;
             padding:6px 12px 6px 12px;
             margin:0px 10px 10px 0px;
+            outline:0;
         }
 
         .button:hover{
             background-color:orange;
             color:white;
+            outline:0;
         }
 
         .buttonactive {
@@ -30,6 +35,7 @@ class Qnabutton extends React.Component {
             border-radius:2px;
             padding:6px 12px 6px 12px;
             margin:0px 10px 10px 0px;
+            outline:0;
         }
         `}
         </style>
