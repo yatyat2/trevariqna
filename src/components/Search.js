@@ -3,7 +3,7 @@ import React from "react";
 class Search extends React.Component {
   render() {
     return (
-      <form>
+      <form className="Search-Form">
         <br />
         <input
           className="Search-Window"
@@ -15,6 +15,14 @@ class Search extends React.Component {
         </button>
         <style JSX>
           {`
+        .Search-Form{
+            display:flex;
+            justify-content:flex-end;
+            margin:1px;
+            width:70%;
+            margin:0px auto;
+        }
+
         .Search-Window{
             padding:6px 12px;
         }

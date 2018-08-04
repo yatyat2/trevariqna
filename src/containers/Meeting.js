@@ -67,15 +67,20 @@ class Meeting extends React.Component {
 
     return (
       <div>
-        <Search />
         <div className="test">
+          <Search />
+        </div>
+
+        <div className="Card-List">
           {data.map(step => {
             return <Card data={step} />;
           })}
         </div>
         <style JSX>
           {`
-        .test {
+     
+
+        .Card-List {
             padding:16px 6px;
             margin:auto;
             width:75%;
