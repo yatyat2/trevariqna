@@ -1,7 +1,6 @@
 import React from "react";
 import Qnabutton from "../components/Qnabutton.js";
 import Question from "../components/Question.js";
-import Header from "../components/Header.js";
 
 class Home extends React.Component {
   state = {
