@@ -14,7 +14,7 @@ class Base extends React.Component {
       "이벤트",
       "아지트"
     ],
-    qnadata: [
+    qnaData: [
       {
         category: "북클럽",
         question: "트레바리 전체 일정을 더 편하게 보고 싶어요!",
@@ -157,7 +157,7 @@ class Base extends React.Component {
   };
 
   render() {
-    const { status, qnacategory } = this.state;
+    const { status, qnacategory, qnaData } = this.state;
     const { handleChange } = this;
 
     return (
@@ -177,8 +177,8 @@ class Base extends React.Component {
             })}
           </div>
           <div className="questionList">
-            <Question />
-            <Question />
+            <Question qnaData={qnaData} />
+            <Question qnaData={qnaData} />
           </div>
         </div>
 

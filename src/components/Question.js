@@ -2,11 +2,13 @@ import React from "react";
 
 class Question extends React.Component {
   render() {
+    const qnaData = this.props.qnaData;
+
     return (
       <div className="question">
         <span className="Q">Q.</span>
-        <span className="qnaCategory">[북클럽]</span>
-        <span>트레바리 전체 일정을 더 편하게 보고 싶어요!</span>
+        <span className="qnaCategory">{qnaData[0].category}</span>
+        <span>{qnaData[0].question}</span>
         <style JSX>
           {`
         .Q {
