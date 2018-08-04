@@ -24,13 +24,13 @@ class Question extends React.Component {
       <div>
         <div className="questionButton" onClick={() => this.openanswer()}>
           <span className="Q">Q.</span>
-          <span className="qnaCategory">{qnaData[0].category}</span>
+          <span className="qnaCategory">{qnaData.category}</span>
           <span className={isopen ? "openQestion" : null}>
-            {qnaData[0].question}
+            {qnaData.question}
           </span>
         </div>
         <div className={isopen ? "answer" : null}>
-          {this.renderanswer(isopen, qnaData[0].answer)}
+          {this.renderanswer(isopen, qnaData.answer)}
         </div>
         <style JSX>
           {`

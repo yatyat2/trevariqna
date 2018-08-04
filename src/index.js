@@ -177,8 +177,9 @@ class Base extends React.Component {
             })}
           </div>
           <div className="questionList">
-            <Question qnaData={qnaData} />
-            <Question qnaData={qnaData} />
+            {qnaData.map(step => {
+              if (status === step.category) return <Question qnaData={step} />;
+            })}
           </div>
         </div>
 
