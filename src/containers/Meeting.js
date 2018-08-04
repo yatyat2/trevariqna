@@ -69,11 +69,9 @@ class Meeting extends React.Component {
       <div>
         <Search />
         <div className="test">
-          <Card data={data} />
-          <Card data={data} />
-          <Card data={data} />
-          <Card data={data} />
-          <Card data={data} />
+          {data.map(step => {
+            return <Card data={step} />;
+          })}
         </div>
         <style JSX>
           {`
