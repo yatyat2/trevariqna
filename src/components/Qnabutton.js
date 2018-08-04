@@ -7,7 +7,7 @@ class Qnabutton extends React.Component {
     return (
       <button
         onClick={() => onClick(qnacategory)}
-        className={status == qnacategory ? "buttonactive" : "button"}
+        className={status === qnacategory ? "buttonactive" : "button"}
       >
         {this.props.qnacategory}
         <style JSX>
