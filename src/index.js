@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import Qnabutton from "./components/Qnabutton.js";
+import Question from "./components/Question.js";
 
 class Base extends React.Component {
   state = {
@@ -162,21 +163,25 @@ class Base extends React.Component {
     return (
       <div className="indexBackground">
         <div className="indexPage">
-          <p>더 궁금하신 사항은 contact@trevari.co.kr로 문의주세요 :)</p>
-          <p>-회신가능요일: 수~일</p>
-          {qnacategory.map(step => {
-            return (
-              <Qnabutton
-                onClick={step => handleChange(step)}
-                qnacategory={step}
-                status={status}
-              />
-            );
-          })}
+          <div className="qnaHeader">
+            <p>더 궁금하신 사항은 contact@trevari.co.kr로 문의주세요 :)</p>
+            <p>-회신가능요일: 수~일</p>
+            {qnacategory.map(step => {
+              return (
+                <Qnabutton
+                  onClick={step => handleChange(step)}
+                  qnacategory={step}
+                  status={status}
+                />
+              );
+            })}
+          </div>
+          <div className="questionList">
+            <Question />
+            <Question />
+          </div>
         </div>
-        <div className="questionList">
 
-        </div>
         <style JSX>
           {`
         .indexBackground {
@@ -185,12 +190,15 @@ class Base extends React.Component {
             
         }
         .indexPage {
+          background-color:white;
+        }
+        .qnaHeader {
             text-align:center;
-            background-color:white;
             opacity:1;
+            margin-bottom:20px;
         }
         .questionList {
-          
+            background-color:white;
         }
         `}
         </style>
