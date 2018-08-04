@@ -4,6 +4,7 @@ import Card from "../components/Card";
 
 class Meeting extends React.Component {
   state = {
+    searchText: "",
     data: [
       {
         clubName: "프로파일러",
@@ -62,18 +63,29 @@ class Meeting extends React.Component {
     ]
   };
 
+  handleSubmit = currentText => {
+    this.setState({
+      searchText: currentText
+    });
+  };
+
   render() {
-    const { data } = this.state;
+    const { searchText, data } = this.state;
+    const { handleSubmit } = this;
 
     return (
       <div>
-        <div className="test">
-          <Search />
+        {searchText}
+        <div>
+          <Search handleSubmit={searchText => handleSubmit(searchText)} />
         </div>
-
         <div className="Card-List">
           {data.map(step => {
-            return <Card data={step} />;
+            if (searchText == "") {
+              return <Card data={step} />;
+            } else if (!step.clubName.indexOf(searchText)) {
+              return <Card data={step} />;
+            }
           })}
         </div>
         <style JSX>

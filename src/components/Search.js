@@ -2,10 +2,17 @@ import React from "react";
 
 class Search extends React.Component {
   render() {
+    const { handleSubmit } = this.props;
     return (
-      <form className="Search-Form">
-        <br />
+      <form
+        className="Search-Form"
+        onSubmit={event => {
+          event.preventDefault();
+          handleSubmit(this.refs.search.value);
+        }}
+      >
         <input
+          ref="search"
           className="Search-Window"
           type="text"
           placeholder="클럽명 검색"
