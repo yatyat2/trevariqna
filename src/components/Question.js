@@ -18,7 +18,7 @@ class Question extends React.Component {
   }
 
   render() {
-    const qnaData = this.props.qnaData;
+    const { qnaData } = this.props;
     const isopen = this.state.isopen;
     return (
       <div>
